@@ -1,0 +1,86 @@
+function [optimizing_param, M, M_init] = extended_box_8th_B(M_target, vars)
+    
+   
+    T_initial = [0     1     0     0     0     0     0     0     0     0
+                 1     1     1     1     0     0     0     0     0     0
+                 0     1     1     0     1     0     0     0     0     0
+                 0     1     0     1     1     1     0     0     0     0
+                 0     0     1     1     1     0     1     0     0     0
+                 0     0     0     1     0     1     1     1     0     0
+                 0     0     0     0     1     1     1     0     1     0
+                 0     0     0     0     0     1     0     1     1     0
+                 0     0     0     0     0     0     1     1     1     1
+                 0     0     0     0     0     0     0     0     1     0];
+
+    T_target =  [0     1     0     0     0     0     0     0     0     0
+                 1     1     1     0     0     0     0     0     0     0
+                 0     1     1     1     0     0     0     0     0     0
+                 0     0     1     1     1     0     1     1     0     0
+                 0     0     0     1     1     1     1     0     0     0
+                 0     0     0     0     1     1     1     0     0     0
+                 0     0     0     1     1     1     1     1     0     0
+                 0     0     0     1     0     0     1     1     1     0
+                 0     0     0     0     0     0     0     1     1     1
+                 0     0     0     0     0     0     0     0     1     0];
+
+    N = length(T_initial);
+    n = N-2;
+    
+
+    I = eye(N);
+
+    
+    M = T_initial;
+
+    var_idx = 1;
+    for i = 1:N
+        for j = i:N
+            if T_initial(i, j) == 1
+                M(i, j) = vars(var_idx);
+                M(j, i) = vars(var_idx);
+                var_idx = var_idx+1;
+            end
+        end
+    end
+
+    M_init = M;
+
+    M = M_annihilate(M, 3, 4, 2, 4);
+    M = M_annihilate(M, 7, 8, 7, 9);
+    M = M_annihilate(M, 5, 6, 3, 6);
+    M = M_annihilate(M, 4, 5, 3, 5);
+    M = M_annihilate(M, 5, 6, 5, 8);
+    M = M_annihilate(M, 6, 7, 6, 8);
+    M = M_annihilate(M, 5, 6, 4, 6);
+
+    % sen = 0;
+    % k = 1;
+    % for cnt = 1:N/2+2
+    %     if sen == 0
+    %         for i = N-1:-1:2
+    %             if T_target(k, i) == 0
+    %                 M = M_annihilate(M, i, i-1, k, i);
+    %             end
+    %         end
+    %     else
+    %         for i = 2:1:N-1
+    %             if T_target(i, N-k+1) == 0
+    %                 M = M_annihilate(M, i, i+1, i, N-k+1);
+    %             end
+    %         end
+    %         k = k+1;
+    %     end
+    %     sen = mod(sen+1, 2);
+    % end
+
+
+
+    optimizing_param = [];
+    for i = 1:N
+        for j = i:N
+            if T_target(i, j) == 1
+                optimizing_param = [optimizing_param, (M(i, j)-M_target(i, j))^2];
+            end
+        end
+    end
+end
