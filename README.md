@@ -17,3 +17,6 @@ M_examples: Contains coupling matrices used as examples in (url), together with 
 3. The settings of the provided code are adjusted for 8th-order case. Change the settings for the desired order. (setting examples for 8th, 14th, and 22nd cases are provided)
 4. Run the code, and wait until the solutions are found. The obtained solution matrices are in the variable "sol_M", and the corresponding free variables are in "sol".
 
+![Demo](M_examples/sword_to_modified_shoelace_30th.gif)
+*Sequence of Givens bijective similarity transformations from 30th-order sword topology to modified-shoelace topology*
+
