@@ -18,10 +18,9 @@ M_examples: Contains coupling matrices used as examples in (url), together with 
 4. Run the code, and wait until the solutions are found. The obtained solution matrices are in the variable "sol_M", and the corresponding free variables are in "sol".
 
 <p align="center">
-  <img src="M_examples/sword_to_modified_shoelace_30th.gif" alt="Sequence of Givens bijective similarity transformations from 30th-order sword topology to modified-shoelace topology">
+  <img src="M_examples/sword_to_modified_shoelace_30th.gif" alt="Sequence of Givens bijective similarity transformations from 30th-order sword topology to modified-shoelace topology"><br>
   <em>Sequence of Givens bijective similarity transformations from 30th-order sword topology to modified-shoelace topology</em>
 </p>
-
 
 
 
