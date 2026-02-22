@@ -19,9 +19,9 @@ M_examples: Contains coupling matrices used as examples in (url), together with 
 
 <p align="center">
   <img src="M_examples/sword_to_modified_shoelace_30th.gif" alt="Sequence of Givens bijective similarity transformations from 30th-order sword topology to modified-shoelace topology">
-</p
+  <em>Sequence of Givens bijective similarity transformations from 30th-order sword topology to modified-shoelace topology</em>
+</p>
 
-*Sequence of Givens bijective similarity transformations from 30th-order sword topology to modified-shoelace topology*
 
 
 
