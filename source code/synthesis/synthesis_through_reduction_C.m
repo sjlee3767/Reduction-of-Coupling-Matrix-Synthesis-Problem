@@ -112,7 +112,7 @@ for i = 1:iter_cnt
     end
 
     if val < eps % check if actual solution. (global minimum)
-        [M, legit] = fix_boxes_v3(M, box_first, box_cnt, eps);
+        [M, legit] = fix_boxes(M, box_first, box_cnt, eps);
         if legit == 0 % check if actual solution. (topology)
             sol2 = [sol2; th_sol];
             sol_M2{end+1} = M;
@@ -172,4 +172,5 @@ function stop = outfunc(x, optimValues, state)
             stop = true;
         end
     end
+
 end
