@@ -12,6 +12,7 @@ M_examples: Contains coupling matrices used as examples in (url), together with 
 
 
 # How to use
+0. Open Matlab, and add the project folder and all the subfolders to the Matlab path.
 1. Prepare a folded-topology matrix of the desired frequency response, and place it under the folder "source code" as a txt file named "M.txt".
 2. Go to ../source code/synthesis/ and open the code "synthesis_through_reduction_C.m" (which implements the synthesis using formulation C in the mentioned article).
 3. The settings of the provided code are adjusted for 8th-order case. Change the settings for the desired order. (setting examples for 8th, 14th, and 22nd cases are provided)
@@ -23,3 +24,4 @@ M_examples: Contains coupling matrices used as examples in (url), together with 
   <br>
   <em>Sequence of Givens bijective similarity transformations from 30th-order sword topology to modified-shoelace topology</em>
 </p>
+
