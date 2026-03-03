@@ -16,7 +16,7 @@ func = @extended_box_8th_A;
 box_first = 3;
 box_cnt = 2;
 
-eps = 1e-4;
+eps = 1e-3;
 
 T = [0     1     0     0     0     0     0     0     0     0
      1     1     1     1     0     0     0     0     0     0
@@ -189,4 +189,5 @@ function [sol, sol_M] = add_solution(sol, th, sol_M, M, eps)
     else
         
     end
+
 end
