@@ -21,7 +21,7 @@ box_first = 3;
 box_cnt = 2;
 var_cnt = 2;
 
-eps = 1e-4;
+eps = 1e-3;
 box_cmp_eps = 0.001;
 
 % 14th
@@ -41,7 +41,7 @@ box_cmp_eps = 0.001;
 % box_cnt = 5;
 % var_cnt = 5;
 % 
-% eps = 1e-4;
+% eps = 1e-3;
 % box_cmp_eps = 0.001;
 
 % 22nd
@@ -174,4 +174,5 @@ function stop = outfunc(x, optimValues, state)
     end
 
 end
+
 
