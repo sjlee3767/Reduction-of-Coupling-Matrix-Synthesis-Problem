@@ -83,7 +83,7 @@ max_depth_in_search = 0;
 
 tic;
 for i = 1:iter_cnt
-    if mod(i, 2) == 1
+    if mod(i, 100) == 1
         elapsed_time = toc; 
         fprintf("%dth iteration done. Found solution (multiplicity) count: %d (%d). Minimum optimizing param found: %f. Miss Count: %d. Elapsed time: %f\n", i, size(sol, 1), sol_cnt_multiplicity, min_opt_param, miss_cnt, elapsed_time);
     end
@@ -174,3 +174,4 @@ function stop = outfunc(x, optimValues, state)
     end
 
 end
+
