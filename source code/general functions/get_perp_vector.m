@@ -1,5 +1,3 @@
-% gets a set of column vectors A and a vector u.
-% 
 function [v, A] = get_perp_vector(A, u)
     n = size(A, 1);
     if n == 0

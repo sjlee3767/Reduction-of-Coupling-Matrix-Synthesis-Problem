@@ -1,14 +1,6 @@
-% gets a matrix M, pivot (i, j), position to be annihilated (ti, tj), and
-% an optional check_multiple variable
-% performs a Givens similarity transformation with the specified pivot (i, j),
-% that annihilates the specified position (ti, tj).
-% when check_multiple == 1 and the given M has a zero-valued to-be-aligned
-% vector (under the given pivot and annihilated position), warning message
-% is printed.
-
 function [ret, R] = M_annihilate(M, i, j, ti, tj, check_multiple)
     if nargin < 6
-        check_multiple = 0;
+        check_multiple = 1;
     end
 
     sen = 0;
@@ -23,6 +15,7 @@ function [ret, R] = M_annihilate(M, i, j, ti, tj, check_multiple)
             if abs(M(i, j)) < eps
                 theta = 0;
                 sen = 1;
+                % disp("Case 2 annihilation has infinite solutions!");
             else
                 theta = pi/4;
             end
@@ -34,6 +27,7 @@ function [ret, R] = M_annihilate(M, i, j, ti, tj, check_multiple)
             sen = 1;
         end
         if M(j, tj) == 0
+            % theta = pi/2;
             theta = 0;
         else
             theta = -atan(M(i, tj)/M(j, tj));
@@ -73,10 +67,10 @@ function [ret, R] = M_annihilate(M, i, j, ti, tj, check_multiple)
         theta = 0;
     end
 
-    if sen == 1 && check_multiple == 1
-        fprintf("one-to-infinite mapping detected! i: %d, j: %d, p: %d, q: %d\n", i, j, ti, tj);
-        disp(M_trim_zeros(M));
-    end
+    % if sen == 1 && check_multiple == 1
+    %     fprintf("one-to-infinite mapping detected! i: %d, j: %d, p: %d, q: %d\n", i, j, ti, tj);
+    %     disp(M_trim_zeros(M));
+    % end
     
     [ret, R] = M_rotation(M, i, j, theta);
     

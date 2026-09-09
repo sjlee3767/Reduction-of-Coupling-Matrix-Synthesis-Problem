@@ -1,4 +1,4 @@
-function ret = M_trim_zeros(M) % reduces very small elements of the given matrix M to zero
+function ret = M_trim_zeros(M)
     s = size(M);
     for i = 1:s(1)
         for j = 1:s(2)
